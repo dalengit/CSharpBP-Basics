@@ -1,0 +1,24 @@
+﻿Application Architecture 
+
+The application tracks the products Acme buys from approved vendors. 
+- In the solution there are projects - "Acme.Biz" etc, a project defines a component of the app 
+- Each project is compiled into an executable, otherwise known as DLL. 
+- First step in creating a C# app is defining the components and then creating a project for each component - easy to maintain/navigate codebase. 
+
+UI Layer 
+- Windows forms - Acme.Win
+- WPF - Acme.Wpf
+- Web Sales - Acme.Web 
+
+Business Logic Layer
+- Acme.Biz - here we put the business logic for our application 
+- We should put business logic into it's own component so it can be extendable: open/closed principle/SRP
+
+Data Access Layer 
+- Acme.Data 
+- The data access component provides all communication with DB 
+- Also implemented through class libraries and Entity Framework (EF)
+
+Common Layer 
+- Acme.Common - common components for our code 
+- Implemented through class libraries 
