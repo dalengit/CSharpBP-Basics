@@ -57,3 +57,7 @@ Domain Entity
 Common code 
 - Can determine specific functionality of one component by seeing if it goes into the other components 
 - If functionality is common across components, then it may be better in a library component 
+
+
+4 - Unit Testing 
+
