@@ -1,4 +1,4 @@
-﻿Application Architecture 
+﻿1 - Application Architecture 
 
 The application tracks the products Acme buys from approved vendors. 
 - In the solution there are projects - "Acme.Biz" etc, a project defines a component of the app 
@@ -22,3 +22,38 @@ Data Access Layer
 Common Layer 
 - Acme.Common - common components for our code 
 - Implemented through class libraries 
+
+2 - C# Application "Things"
+
+C# Apps work with things: 
+- Web pages 
+- Runtime memory
+- Domain entities
+- Logging 
+- Working with the DB 
+- How does an application know what to do with all these things? - this is described in a class.
+
+What is a class?
+- A class is a user-defined blueprint or prototype from which objects are created. Basically, a class combines the fields and methods
+(member function which defines actions) into a single unit. In C#, classes support polymorphism, inheritance and also provide 
+the concept of derived classes and base classes.
+- A class contains objects which defines what the class looks like and the behaviour it will inherit. 
+
+3 - Types of Classes
+
+Classes: 
+- UI 
+- Domain Entity 
+- Library 
+
+UI
+- View model classes - MVVM pattern 
+- Form classes
+
+Domain Entity 
+- Domain classes (Acme.Biz) - identifies the basic business entities that need to be managed by the app and how they are related. 
+- Repository classes - Tracking the data of classes
+
+Common code 
+- Can determine specific functionality of one component by seeing if it goes into the other components 
+- If functionality is common across components, then it may be better in a library component 
