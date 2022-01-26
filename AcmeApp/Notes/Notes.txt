@@ -150,3 +150,11 @@ public class Product
 	}
 }
 
+4 - Constructor Best Practice
+DO: 
+- Consider proviidng a default constructor 
+- Consider providing a parameterized constructor - this initializes the minimum properties required for a valid object 
+- Name the constructor parameters the same name as the related properties.
+ 
+DON'T: 
+- Performing too much work in the constructor 

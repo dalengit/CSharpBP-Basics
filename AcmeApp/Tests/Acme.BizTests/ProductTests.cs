@@ -29,5 +29,19 @@ namespace Acme.Biz.Tests
             // Assert 
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod()]
+        public void Say_Hello_Paramaeterized_Constructor()
+        {
+            // Arrange
+            var currentProduct = new Product(1, "Bog", "Use it in the bathroom");
+            var expected = "Hello Bog (1): Use it in the bathroom";
+
+            // Act
+            var actual = currentProduct.SayHello();
+
+            // Assert 
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
