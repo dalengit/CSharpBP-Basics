@@ -132,3 +132,21 @@ DON'T:
 - Named with the same as the class name 
 - Default constructor has no parameters 
 - Ctors not required
+
+Parameterized constructor
+- Defines parameters to initialize the object instance 
+- Overloading - defining two methods with the same name (but diff. parameters)
+- Minimizes repeated code
+- A parameterized constructor will use "this" keyword to invoke another constructor, therefore triggering the methods inside that ctor,
+This process is called constructor chaining e.g. 
+
+public class Product 
+{
+	public Product() {}
+
+	public Product(string productName) : this() // This refers to original ctor
+	{
+		ProductName = productName;
+	}
+}
+
