@@ -125,3 +125,10 @@ DON'T:
 - Use underscores 
 
 - Avoid large classes
+
+3 - Constructors 
+- Is a special method in the class
+- Executed when instance is created 
+- Named with the same as the class name 
+- Default constructor has no parameters 
+- Ctors not required

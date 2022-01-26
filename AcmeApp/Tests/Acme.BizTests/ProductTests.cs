@@ -15,10 +15,12 @@ namespace Acme.Biz.Tests
         public void Say_Hello_Test()
         {
             // Arrange
-            var currentProduct = new Product();
-            currentProduct.ProductName = "Bog";
-            currentProduct.ProductId = 1;
-            currentProduct.Description = "Use it in the bathroom";
+            var currentProduct = new Product
+            {
+                ProductName = "Bog",
+                ProductId = 1,
+                Description = "Use it in the bathroom"
+            };
             var expected = "Hello Bog (1): Use it in the bathroom";
             
             // Act

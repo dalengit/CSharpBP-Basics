@@ -8,29 +8,9 @@ namespace Acme.Biz
 {
     public class Product
     {
-        private string _productName;
-
-        public string ProductName
-        {
-            get { return _productName; }
-            set { _productName = value; }
-        }
-
-        private string _description;
-
-        public  string Description
-        {
-            get { return _description; }
-            set { _description = value; }
-        }
-
-        private int _productId;
-
-        public int ProductId
-        {
-            get { return _productId; }
-            set { _productId = value; }
-        }
+        public string ProductName { get; set; }
+        public string Description { get; set; }
+        public int ProductId { get; set; }
 
         public string SayHello()
         {
