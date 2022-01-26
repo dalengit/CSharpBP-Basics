@@ -12,9 +12,20 @@ namespace Acme.Biz.Tests
     public class ProductTests
     {
         [TestMethod()]
-        public void SayHelloTest()
+        public void Say_Hello_Test()
         {
-            Assert.Fail();
+            // Arrange
+            var currentProduct = new Product();
+            currentProduct.ProductName = "Bog";
+            currentProduct.ProductId = 1;
+            currentProduct.Description = "Use it in the bathroom";
+            var expected = "Hello Bog (1): Use it in the bathroom";
+            
+            // Act
+            var actual = currentProduct.SayHello();
+
+            // Assert 
+            Assert.AreEqual(expected, actual);
         }
     }
 }
