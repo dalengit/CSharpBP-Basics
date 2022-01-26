@@ -1,4 +1,5 @@
-﻿1 - Application Architecture 
+﻿MODULE 2 - Defining Proper Classes
+1 - Application Architecture 
 
 The application tracks the products Acme buys from approved vendors. 
 - In the solution there are projects - "Acme.Biz" etc, a project defines a component of the app 
@@ -59,15 +60,68 @@ Common code
 - If functionality is common across components, then it may be better in a library component 
 
 
-4 - Unit Testing 
+4 - Unit Testing -> VendorTests.cs
 
 - Tests the behaviour of code: often a method 
 - Automated testing 
 - Defined with code 
 - Identifies errors 
 
-To create good tet, we must: 
+To create good test, we must: 
 
 - Have testable methods - create tests which explore all cases/situation
 - I.e. test cases clarify scenarios
 - Tests must point out any failures
+
+5 - FAQs
+
+Why is a layered architecture important?
+- Logical componentes are easier to create, change, extend, and maintain 
+- Code is easier to reuse 
+
+What is a class?
+- A template for the objects created at runtime 
+- Specifies the data and operations for each entity 
+
+What are the benefits of unit testing?
+- Higher quality code, faster and easier debusgging, and they are repeatable over the life of the application.
+
+MODULE 3 - Building Good Classes -> Product.cs
+
+The code we write for a class, includes these members: 
+- The class signature/name/access modifier 
+- Fields
+- Properties
+- Methods 
+- Constructors 
+
+In this module we will: 
+- Build a class
+- Define constructors
+- Look at namespaces
+- Building a static class 
+- Defining a singleton 
+- FAQ 
+
+1 - Class Signature 
+- Access modifier: public, private, internal 
+- Fields define the variables in the class - hold data that the methods create - also have access modifiers 
+- Properties are getter and setter function that control access to the fields of the class (Backing fields)
+- Methods are just functions containing the logic for the class
+
+2 - Class best practices 
+DO: 
+- Define a meaningful name
+- Use a noun 
+- Use PascalCasing 
+
+- Ensure that the class has a well-defined purpose
+- Create one class per code file
+- Add properties above the methods 
+
+DON'T: 
+- Use abbreviations 
+- Use prefixes 
+- Use underscores 
+
+- Avoid large classes
