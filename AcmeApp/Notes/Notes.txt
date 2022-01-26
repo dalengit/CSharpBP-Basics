@@ -61,3 +61,13 @@ Common code
 
 4 - Unit Testing 
 
+- Tests the behaviour of code: often a method 
+- Automated testing 
+- Defined with code 
+- Identifies errors 
+
+To create good tet, we must: 
+
+- Have testable methods - create tests which explore all cases/situation
+- I.e. test cases clarify scenarios
+- Tests must point out any failures
