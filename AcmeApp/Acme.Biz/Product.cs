@@ -34,7 +34,7 @@ namespace Acme.Biz
 
         public string SayHello()
         {
-
+            return "Hello " + ProductName + " (" + ProductId + "): " + Description;
         }
     }
 }
