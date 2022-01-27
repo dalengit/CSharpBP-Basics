@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Dynamic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -25,7 +27,14 @@ namespace Acme.Biz
 
         public string ProductName { get; set; }
         public string Description { get; set; }
-        public int ProductId { get; set; }
+        
+        private int _productId;
+
+        public int ProductId
+        {
+            get { return _productId; }
+            set { ProductId = value;  }
+        }
 
         public string SayHello()
         {

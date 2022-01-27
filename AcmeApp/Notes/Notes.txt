@@ -157,4 +157,23 @@ DO:
 - Name the constructor parameters the same name as the related properties.
  
 DON'T: 
-- Performing too much work in the constructor 
+- Performing too much work in the constructor
+
+5 - Namespaces 
+- Namespaces are automatically added arond every class
+- They are the same name as the project 
+- They are used to provide a unique address to the class and to organize the applications classes into a logical hierarchy 
+
+Namespaces - Best Practices
+DO: 
+- Follow this generalized template <CompanyName>.<Technology>.<Feature> e.g.
+Microsoft.Office.Interop.Powerpoint
+- Use PascalCasing 
+
+AVOID: 
+- Using System in your namespace e.g.
+System.Windows.Media.Imaging 
+- Using a class name 
+Namespace: Acme.Biz.Product
+Class: Acme.Biz.Product.Product
+
