@@ -1,0 +1,144 @@
+﻿MODULE 3 - Building Good Classes -> Product.cs
+
+The code we write for a class, includes these members: 
+- The class signature/name/access modifier 
+- Fields
+- Properties
+- Methods 
+- Constructors 
+
+In this module we will: 
+- Build a class
+- Define constructors
+- Look at namespaces
+- Building a static class 
+- Defining a singleton 
+- FAQ 
+
+1 - Class Signature 
+- Access modifier: public, private, internal 
+- Fields define the variables in the class - hold data that the methods create - also have access modifiers 
+- Properties are getter and setter function that control access to the fields of the class (Backing fields)
+- Methods are just functions containing the logic for the class
+
+2 - Class best practices 
+DO: 
+- Define a meaningful name
+- Use a noun 
+- Use PascalCasing 
+
+- Ensure that the class has a well-defined purpose
+- Create one class per code file
+- Add properties above the methods 
+
+DON'T: 
+- Use abbreviations 
+- Use prefixes 
+- Use underscores 
+
+- Avoid large classes
+
+3 - Constructors 
+- Is a special method in the class
+- Executed when instance is created 
+- Named with the same as the class name 
+- Default constructor has no parameters 
+- Ctors not required
+
+Parameterized constructor
+- Defines parameters to initialize the object instance 
+- Overloading - defining two methods with the same name (but diff. parameters)
+- Minimizes repeated code
+- A parameterized constructor will use "this" keyword to invoke another constructor, therefore triggering the methods inside that ctor,
+This process is called constructor chaining e.g. 
+
+public class Product 
+{
+	public Product() {}
+
+	public Product(string productName) : this() // This refers to original ctor
+	{
+		ProductName = productName;
+	}
+}
+
+4 - Constructor Best Practice
+DO: 
+- Consider proviidng a default constructor 
+- Consider providing a parameterized constructor - this initializes the minimum properties required for a valid object 
+- Name the constructor parameters the same name as the related properties.
+ 
+DON'T: 
+- Performing too much work in the constructor
+
+5 - Namespaces 
+- Namespaces are automatically added arond every class
+- They are the same name as the project 
+- They are used to provide a unique address to the class and to organize the applications classes into a logical hierarchy 
+
+Namespaces - Best Practices
+DO: 
+- Follow this generalized template <CompanyName>.<Technology>.<Feature> e.g.
+Microsoft.Office.Interop.Powerpoint
+- Use PascalCasing 
+
+AVOID: 
+- Using System in your namespace e.g.
+System.Windows.Media.Imaging 
+- Using a class name 
+Namespace: Acme.Biz.Product
+Class: Acme.Biz.Product.Product
+
+6 - Static Classes 
+
+A static class is a cohesive set of services provided by a set of methods, often without any internal data 
+- There are three key differences to a static class
+- The static keyword is in the class signature e.g. public static class Meme {}
+- The class can only include static members - fields, properties, and methods must also be static 
+- You cannot instantiate a static class i.e. new up/create an instance
+- Use the class name to call members of a static class
+- A static class acts like a container for properties and methods, mostly methods that provide utility features. 
+ 
+Static Classes Best Practices
+DO: 
+- Use static classes sparingly, they should only be used as supporting classes for the application 
+- Static classes don't participate well with OOP features 
+- Use for common code library components when needed 
+
+ AVOID: 
+ - Using static classes as a misc. bucket - every class should have a purpose 
+
+7 - Singletons 
+
+A singleton is a class that provides only one instance 
+- Two basic steps to defining a singleton 
+1. Change the accessibility modifier on the constructor from public to private 
+- This allows this class to create an instance, however, it cannot be instantiated anywhere else.
+2. Add a static property that creates and provides the one instance. 
+E.g. 
+
+public class User
+{
+	private static User instance; // Field 
+
+	private User() {} // Constructor 
+
+	public static User Instance // Single instance of the class
+	{
+		get
+		{
+			if(instance == null)
+			{
+				instance = new User();
+			}
+			return instance;
+		}
+	}
+}
+
+Advantages of a single vs a Static class
+
+- A singleton has an instance, therefore can be passed to other code as needed
+- A singleton can have child objects associated with it
+Example: User instance has a set of roles associated with it.
+- A singleton supports OOP features: It can implement an interface, It can be inherited from
