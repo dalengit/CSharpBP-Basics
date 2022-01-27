@@ -187,11 +187,39 @@ A static class is a cohesive set of services provided by a set of methods, often
 - Use the class name to call members of a static class
 - A static class acts like a container for properties and methods, mostly methods that provide utility features. 
  
- Static Classes Best Practices
- DO: 
- - Use static classes sparingly, they should only be used as supporting classes for the application 
- - Static classes don't participate well with OOP features 
- - Use for common code library components when needed 
+Static Classes Best Practices
+DO: 
+- Use static classes sparingly, they should only be used as supporting classes for the application 
+- Static classes don't participate well with OOP features 
+- Use for common code library components when needed 
 
  AVOID: 
  - Using static classes as a misc. bucket - every class should have a purpose 
+
+7 - Singletons 
+
+A singleton is a class that provides only one instance 
+- Two basic steps to defining a singleton 
+1. Change the accessibility modifier on the constructor from public to private 
+- This allows this class to create an instance, however, it cannot be instantiated anywhere else.
+2. Add a static property that creates and provides the one instance. 
+E.g. 
+
+public class User
+{
+	private static User instance; // Field 
+
+	private User() {} // Constructor 
+
+	public static User Instance // Single instance of the class
+	{
+		get
+		{
+			if(instance == null)
+			{
+				instance = new User();
+			}
+			return instance;
+		}
+	}
+}
