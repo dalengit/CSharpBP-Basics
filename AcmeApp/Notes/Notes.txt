@@ -177,3 +177,13 @@ System.Windows.Media.Imaging
 Namespace: Acme.Biz.Product
 Class: Acme.Biz.Product.Product
 
+6 - Static Classes 
+
+A static class is a cohesive set of services provided by a set of methods, often without any internal data 
+- There are three key differences to a static class
+- The static keyword is in the class signature e.g. public static class Meme {}
+- The class can only include static members - fields, properties, and methods must also be static 
+- You cannot instantiate a static class i.e. new up/create an instance
+- Use the class name to call members of a static class
+- A static class acts like a container for properties and methods, mostly methods that provide utility features. 
+
